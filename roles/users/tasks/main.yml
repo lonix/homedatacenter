@@ -1,0 +1,19 @@
+---
+- name: Remove user pirate
+  user:
+    name: pirate
+    remove: yes
+    state: absent
+
+- name: Add User lonix
+  user:
+    name: lonix
+    state: present
+    shell: /bin/zsh
+    append: yes
+
+- name: Add SSH Keys for lonix
+  authorized_key:
+      user: lonix
+      key: https://github.com/lonix.keys
+      exclusive: yes
