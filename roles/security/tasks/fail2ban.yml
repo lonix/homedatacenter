@@ -1,12 +1,11 @@
 ---
- - name: Install fail2ban
-   apt:
-     name: fail2ban
-     update_cache: yes
-     cache_valid_time: 300
-   notify:
-    - systemd daemon-reload
 
+ - name: Install fail2ban
+   package:
+     name: fail2ban
+     state: present
+   when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+   tags: security
 
  - name: Copy jail configs
    copy:
@@ -17,6 +16,8 @@
      group: root
    notify:
     - restart fail2ban service
+   when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+   tags: security
 
  - name: Delete default fail2ban config.
    file:
@@ -25,3 +26,5 @@
    notify:
     - restart fail2ban service
     - restart ssh service
+   when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+   tags: security

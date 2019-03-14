@@ -1,6 +1,7 @@
 ---
  - name: Install PSAD
-   apt:
+   package:
      name: psad
-     update_cache: yes
-     cache_valid_time: 300
+     state: present
+   when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+   tags: security

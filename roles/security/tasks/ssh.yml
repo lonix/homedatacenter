@@ -5,3 +5,4 @@
                line="PasswordAuthentication no"
                state=present
    notify: restart ssh service
+   tags: ssh, security
