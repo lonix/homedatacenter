@@ -1,10 +1,4 @@
 ---
-- name: Remove user pirate
-  user:
-    name: pirate
-    remove: yes
-    state: absent
-
 - name: Add User lonix
   user:
     name: lonix
