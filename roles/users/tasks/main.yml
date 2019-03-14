@@ -1,13 +1,15 @@
 ---
-- name: Add User lonix
+- name: Add and remove users
   user:
-    name: lonix
-    state: present
-    shell: /bin/zsh
+    name: {{ item.name }}
+    state: {{ item.state }}
+    shell: {{ item.shell }}
     append: yes
+  with_items: {{ users }}
 
-- name: Add SSH Keys for lonix
+- name: Add SSH Keys for users
   authorized_key:
-      user: lonix
-      key: https://github.com/lonix.keys
+      user: {{ item.name }}
+      key: https://github.com/{{ item.name }}.keys
       exclusive: yes
+  with_items: {{ users }}
