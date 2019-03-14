@@ -1,0 +1,3 @@
+---
+ - name: No password requirement for sudo access
+   lineinfile: "dest=/etc/sudoers state=present regexp='^%sudo' line='%sudo ALL=(ALL) NOPASSWD: ALL'"
