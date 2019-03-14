@@ -8,3 +8,5 @@
   service:
     name: fail2ban
     state: restarted
+
+#TODO: Ensure this works in RHEL to
