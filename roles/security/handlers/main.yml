@@ -1,0 +1,12 @@
+---
+- name: restart ssh service
+  service:
+    name: ssh
+    state: restarted
+
+- name: restart fail2ban service
+  service:
+    name: fail2ban
+    state: restarted
+
+#TODO: Ensure this works in RHEL to

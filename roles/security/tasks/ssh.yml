@@ -1,0 +1,8 @@
+---
+ - name: Disallow password authentication over SSH
+   lineinfile: dest=/etc/ssh/sshd_config
+               regexp="^PasswordAuthentication"
+               line="PasswordAuthentication no"
+               state=present
+   notify: restart ssh service
+   tags: ssh, security
