@@ -331,3 +331,4 @@ ASALocalRun/
 
 #Vagrant
 .vagrant/*
+*.retry
