@@ -1,7 +1,0 @@
----
- - name: Install PSAD
-   package:
-     name: psad
-     state: present
-   when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
-   tags: security

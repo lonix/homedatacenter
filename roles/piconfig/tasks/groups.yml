@@ -1,8 +1,0 @@
----
- - name: Ensure users are in the required groups
-   user:
-    name: {{ item }}
-    append: yes
-    groups: users,docker,video,input,sudoers
-   with_items: {{ users }}
-

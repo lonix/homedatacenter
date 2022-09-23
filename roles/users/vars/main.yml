@@ -1,5 +1,0 @@
----
-users:
-  - {name: lonix, state: present, shell: /bin/zsh}
-  - {name: pirate, state: absent, shell: /bin/false}
-  - {name: pi, state: absent, shell: /bin/false}
